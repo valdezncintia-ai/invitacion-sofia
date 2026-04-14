@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Invitación Cumpleaños Sofía</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: url("IMAGEN SOFIA.PNG") no-repeat top center;
+      background-size: contain;
+      background-color: #fff6fb;
+      color: #333;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1, h2 { margin-bottom: 1rem; }
+
+    p { margin-bottom: 1rem; }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 80%;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .options label {
+      font-weight: normal;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff66aa;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff4c98;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PANTALLA 1 -->
+  <section id="pantalla1">
+    <h1></h1>
+    <p></p>
+  </section>
+
+  <!-- PANTALLA 2 -->
+  <section id="pantalla2">
+    <h2></h2>
+    <p><strong></strong></p>
+    <p><strong></strong> </p>
+    <p><strong></strong> </p>
+    <p></p>
+  </section>
+
+ <!-- PANTALLA 3 - FORMULARIO -->
+<section id="pantalla3" style="margin-top: 1100px;">
+  <h2>Confirmar asistencia</h2>
+  <p>Completá el formulario para enviar tu respuesta.</p>
+
+  <form action="https://formsubmit.co/cintia_valdez@hotmail.es" method="POST">
+
+    <!-- Protección anti-spam -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirección después de enviar -->
+    <input type="hidden" name="_next" value="https://gracias-por-confirmar.com">
+
+    <label for="nombre">Nombre del invitado</label>
+    <input type="text" id="nombre" name="Nombre" required />
+
+    <label>¿Asistirá?</label>
+    <div class="options">
+      <label><input type="radio" name="Asistencia" value="Sí, asistiré" required /> Sí, asistiré</label>
+      <label><input type="radio" name="Asistencia" value="No podré asistir" /> No podré asistir</label>
+    </div>
+
+    <h3>Alergias</h3>
+    <div class="options">
+      <label><input type="checkbox" name="Alergia_Sin_TACC" value="Sin TACC" /> Sin TACC</label>
+      <label><input type="checkbox" name="Alergia_Otras" value="Otras" /> Otras (especificar)</label>
+    </div>
+
+    <label for="comentarios">Comentarios / Aclaraciones</label>
+    <textarea id="comentarios" name="Comentarios"></textarea>
+
+    <button type="submit" class="submit-btn">Enviar confirmación</button>
+  </form>
+</section>
+
+</body>
+</html>
