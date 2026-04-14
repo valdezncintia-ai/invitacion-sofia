@@ -15,7 +15,7 @@
       left: 0;
       width: 100%;
       height: auto;
-      z-index: -1; /* queda detrás del contenido */
+      z-index: -1;
     }
 
     .fondo-fijo img {
@@ -25,7 +25,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff6fb; /* color detrás de la imagen */
+      background-color: #fff6fb;
       color: #333;
     }
 
@@ -120,16 +120,13 @@
   </section>
 
   <!-- PANTALLA 3 - FORMULARIO -->
-  <section id="pantalla3" style="margin-top: 1100px;">
+  <section id="pantalla3">
     <h2>Confirmar asistencia</h2>
     <p>Completá el formulario para enviar tu respuesta.</p>
 
     <form action="https://formsubmit.co/cintia_valdez@hotmail.es" method="POST">
 
-      <!-- Protección anti-spam -->
       <input type="hidden" name="_captcha" value="false">
-
-      <!-- Redirección después de enviar -->
       <input type="hidden" name="_next" value="https://gracias-por-confirmar.com">
 
       <label for="nombre">Nombre del invitado</label>
