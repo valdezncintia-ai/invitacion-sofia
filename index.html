@@ -175,58 +175,44 @@
     <div class="overlay">
       <h2>Confirmar asistencia</h2>
       <p>Completá el formulario para enviarnos tu respuesta.</p>
-
-      <!-- EmailJS SDK -->
-      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-      <script>
-        (function(){
-          emailjs.init("ieqez7gphdh7Cm6Tc");
-        })();
-      </script>
-
-      <form id="formulario">
-
+      
+      <!-- Formulario que envía un correo a Cintia -->
+      <form action="mailto:cintia_valdez@hotmail.es" method="post" enctype="text/plain">
         <label for="nombre">Nombre del invitado</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="Nombre" required />
 
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" required>
-
-        <label>¿Asistirá?</label>
+        <label>¿Asistirá a la fiesta?</label>
         <div class="options">
-          <label><input type="radio" name="asistencia" value="Sí, asistiré" required> Sí, asistiré</label>
-          <label><input type="radio" name="asistencia" value="No podré asistir"> No podré asistir</label>
+          <label>
+            <input type="radio" name="Asistencia" value="Sí, asistiré" required />
+            Sí, asistiré
+          </label>
+          <label>
+            <input type="radio" name="Asistencia" value="No podré asistir" />
+            No podré asistir
+          </label>
         </div>
 
-        <label>Alergias</label>
+        <h3>Lista de verificación de alergias</h3>
+
         <div class="options">
-          <label><input type="checkbox" name="sin_tacc" value="Sin TACC"> Sin TACC</label>
-          <label><input type="checkbox" name="otras" value="Otras"> Otros (especificar)</label>
+          <label>
+            <input type="checkbox" name="Alergia_Sin_TACC" value="Sin TACC" />
+            Sin TACC
+          </label>
+          <label>
+            <input type="checkbox" name="Alergia_Otras" value="Otras" />
+            Otros (especificar abajo)
+          </label>
         </div>
 
-        <label for="comentarios">Comentarios</label>
-        <textarea id="comentarios" name="comentarios"></textarea>
+        <label for="comentarios">Comentarios / Detalle de alergias u otra información</label>
+        <textarea id="comentarios" name="Comentarios"></textarea>
 
-        <button type="submit" class="submit-btn">Enviar confirmación</button>
+        <button type="submit" class="submit-btn">Enviar respuesta</button>
       </form>
+    </section>
 
-      <script>
-        document.getElementById("formulario").addEventListener("submit", function(event) {
-          event.preventDefault();
-
-          emailjs.sendForm("service_falst2r", "template_2jh9f1n", this)
-            .then(() => {
-              alert("¡Gracias! Tu confirmación fue enviada correctamente.");
-              this.reset();
-            }, (error) => {
-              alert("Hubo un error al enviar. Intentá nuevamente.");
-              console.log(error);
-            });
-        });
-      </script>
-
-    </div>
-  </section>
-
+  </div>
 </body>
 </html>
