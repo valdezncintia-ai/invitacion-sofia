@@ -5,7 +5,7 @@
   <title>Invitación Sofía</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- EmailJS SDK -->
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function() {
@@ -130,30 +130,25 @@
 
     .spacer { height: 40px; }
 
-    /* ⭐⭐⭐ RESPONSIVE TABLET / CELULAR ⭐⭐⭐ */
+    /* ⭐⭐⭐ CORRECCIÓN REAL PARA CELULAR ⭐⭐⭐ */
     @media (max-width: 768px) {
+
+      /* Las secciones dejan de ocupar toda la pantalla */
       section {
-        padding: 1.5rem 1rem;
-        background-position: top;
+        min-height: auto;
+        padding: 3rem 1rem;
         background-size: contain;
+        background-position: top center;
         background-color: #ffffff;
-        justify-content: flex-start;
-        padding-top: 4.5rem;
       }
 
-      nav {
-        flex-wrap: wrap;
-        gap: 0.3rem;
-        font-size: 0.8rem;
-        padding: 0.4rem;
-      }
-
+      /* El formulario se vuelve más cómodo */
       .overlay {
+        max-width: 95%;
         padding: 1rem;
-        border-radius: 8px;
-        max-width: 90%;
       }
 
+      /* Inputs más proporcionados */
       input[type="text"],
       input[type="email"],
       textarea {
@@ -161,33 +156,34 @@
         padding: 0.5rem;
       }
 
+      /* Botón más cómodo */
       .submit-btn {
         padding: 0.7rem;
         font-size: 0.9rem;
       }
 
-      h2 {
-        font-size: 1.3rem;
-      }
-
-      p {
-        font-size: 0.95rem;
+      /* Navegación más chica */
+      nav {
+        flex-wrap: wrap;
+        font-size: 0.75rem;
+        gap: 0.2rem;
+        padding: 0.3rem;
       }
     }
 
     /* ⭐⭐⭐ CELULARES MUY CHICOS ⭐⭐⭐ */
     @media (max-width: 480px) {
-      nav {
-        font-size: 0.75rem;
-        gap: 0.2rem;
-      }
 
-      h2 {
-        font-size: 1.2rem;
+      section {
+        padding: 2.5rem 0.8rem;
       }
 
       .overlay {
         padding: 0.8rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
       }
 
       input, textarea {
@@ -211,7 +207,7 @@
 
   <div class="spacer"></div>
 
-  <!-- Páginas (solo imagen de fondo) -->
+  <!-- Páginas -->
   <section id="pagina1"></section>
   <section id="pagina2"></section>
   <section id="pagina3"></section>
@@ -224,7 +220,6 @@
       <h2>Confirmar asistencia</h2>
       <p>Completá el formulario para enviarnos tu respuesta.</p>
 
-      <!-- Formulario con envío automático vía EmailJS -->
       <form id="formulario">
         <label for="nombre">Nombre del invitado</label>
         <input type="text" id="nombre" name="nombre" required />
@@ -253,7 +248,7 @@
     </div>
   </section>
 
-  <!-- Lógica de envío con EmailJS -->
+  <!-- Envío automático con EmailJS -->
   <script>
     document.getElementById("formulario").addEventListener("submit", function(event) {
       event.preventDefault();
