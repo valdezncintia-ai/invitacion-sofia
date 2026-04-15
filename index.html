@@ -22,7 +22,9 @@
       scroll-behavior: smooth;
     }
 
-    /* Secciones generales */
+    /* ============================
+       SECCIONES (VERSIÓN PC)
+       ============================ */
     section {
       min-height: 100vh;
       display: flex;
@@ -53,9 +55,6 @@
       width: 100%;
     }
 
-    h1, h2 { margin-bottom: 1rem; }
-    p { margin-bottom: 0.8rem; }
-
     form { margin-top: 1rem; text-align: left; }
 
     label {
@@ -78,12 +77,6 @@
     textarea {
       min-height: 100px;
       resize: vertical;
-    }
-
-    .options label {
-      font-weight: normal;
-      display: block;
-      margin-bottom: 0.3rem;
     }
 
     .submit-btn {
@@ -124,31 +117,35 @@
       border-radius: 4px;
     }
 
-    nav a:hover {
-      background-color: #ffebf5;
-    }
-
     .spacer { height: 40px; }
 
-    /* ⭐⭐⭐ CORRECCIÓN REAL PARA CELULAR ⭐⭐⭐ */
-    @media (max-width: 1200px) {
+    /* ============================
+       CORRECCIÓN REAL PARA CELULAR
+       ============================ */
+    @media (max-width: 768px) {
 
-      /* Las secciones dejan de ocupar toda la pantalla */
+      /* Las secciones dejan de ser gigantes */
       section {
         min-height: auto;
-        padding: 3rem 1rem;
+        padding: 2rem 1rem;
         background-size: contain;
         background-position: top center;
         background-color: #ffffff;
       }
 
-      /* El formulario se vuelve más cómodo */
+      /* Espacio para que se vea la imagen completa */
+      section::after {
+        content: "";
+        display: block;
+        height: 40vh;
+      }
+
+      /* Formulario más cómodo */
       .overlay {
         max-width: 95%;
         padding: 1rem;
       }
 
-      /* Inputs más proporcionados */
       input[type="text"],
       input[type="email"],
       textarea {
@@ -156,7 +153,6 @@
         padding: 0.5rem;
       }
 
-      /* Botón más cómodo */
       .submit-btn {
         padding: 0.7rem;
         font-size: 0.9rem;
@@ -171,19 +167,14 @@
       }
     }
 
-    /* ⭐⭐⭐ CELULARES MUY CHICOS ⭐⭐⭐ */
+    /* Celulares muy chicos */
     @media (max-width: 480px) {
-
       section {
-        padding: 2.5rem 0.8rem;
+        padding: 1.5rem 0.8rem;
       }
 
       .overlay {
         padding: 0.8rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
       }
 
       input, textarea {
@@ -207,14 +198,14 @@
 
   <div class="spacer"></div>
 
-  <!-- Páginas -->
+  <!-- Secciones -->
   <section id="pagina1"></section>
   <section id="pagina2"></section>
   <section id="pagina3"></section>
   <section id="pagina4"></section>
   <section id="pagina5"></section>
 
-  <!-- PÁGINA 6 - FORMULARIO -->
+  <!-- Formulario -->
   <section id="pagina6">
     <div class="overlay">
       <h2>Confirmar asistencia</h2>
@@ -233,14 +224,13 @@
           <label><input type="radio" name="asistencia" value="No podré asistir" /> No podré asistir</label>
         </div>
 
-        <h3>Lista de verificación de alergias</h3>
-
+        <h3>Alergias</h3>
         <div class="options">
           <label><input type="checkbox" name="sin_tacc" value="Sin TACC" /> Sin TACC</label>
           <label><input type="checkbox" name="otras" value="Otras" /> Otros (especificar abajo)</label>
         </div>
 
-        <label for="comentarios">Comentarios / Detalle de alergias u otra información</label>
+        <label for="comentarios">Comentarios</label>
         <textarea id="comentarios" name="comentarios"></textarea>
 
         <button type="submit" class="submit-btn">Enviar respuesta</button>
@@ -248,7 +238,7 @@
     </div>
   </section>
 
-  <!-- Envío automático con EmailJS -->
+  <!-- EmailJS -->
   <script>
     document.getElementById("formulario").addEventListener("submit", function(event) {
       event.preventDefault();
