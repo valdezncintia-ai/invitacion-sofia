@@ -120,24 +120,22 @@
     .spacer { height: 40px; }
 
     /* ============================
-       CORRECCIÓN REAL PARA CELULAR
+       CORRECCIÓN CELULAR REAL
        ============================ */
     @media (max-width: 768px) {
 
-      /* Las secciones dejan de ser gigantes */
+      /* Las secciones ya NO son gigantes */
       section {
         min-height: auto;
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
         background-size: contain;
         background-position: top center;
         background-color: #ffffff;
       }
 
-      /* Espacio para que se vea la imagen completa */
+      /* ELIMINAMOS el espacio en blanco entre páginas */
       section::after {
-        content: "";
-        display: block;
-        height: 50vh;
+        display: none;
       }
 
       /* Formulario más cómodo */
@@ -170,7 +168,7 @@
     /* Celulares muy chicos */
     @media (max-width: 480px) {
       section {
-        padding: 1.5rem 0.8rem;
+        padding: 1.2rem 0.8rem;
       }
 
       .overlay {
