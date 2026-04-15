@@ -20,39 +20,37 @@
       font-family: Arial, sans-serif;
       color: #333;
       scroll-behavior: smooth;
+      background-color: #fff;
     }
 
-    /* ============================
-       SECCIONES (VERSIÓN PC)
-       ============================ */
+    /* Secciones generales */
     section {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       text-align: center;
-      padding: 2rem 1.5rem;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      padding: 4rem 1.5rem 2rem;
     }
 
-    /* Fondos */
-    #pagina1 { background-image: url("IMAGEN_sofia_1.png"); }
-    #pagina2 { background-image: url("IMAGEN_sofia_2.png"); }
-    #pagina3 { background-image: url("IMAGEN_sofia_3.png"); }
-    #pagina4 { background-image: url("IMAGEN_sofia_4.png"); }
-    #pagina5 { background-image: url("IMAGEN_sofia_5.png"); }
-    #pagina6 { background-image: url("IMAGEN_sofia_6.png"); }
+    /* Imagen de cada página */
+    .page-image {
+      max-width: 900px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 1.5rem;
+    }
 
     /* Caja del formulario */
     .overlay {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       padding: 1.5rem;
       border-radius: 10px;
       max-width: 600px;
       width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     form { margin-top: 1rem; text-align: left; }
@@ -77,6 +75,12 @@
     textarea {
       min-height: 100px;
       resize: vertical;
+    }
+
+    .options label {
+      font-weight: normal;
+      display: block;
+      margin-bottom: 0.3rem;
     }
 
     .submit-btn {
@@ -104,10 +108,11 @@
       display: flex;
       gap: 0.5rem;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(4px);
       z-index: 10;
       font-size: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     nav a {
@@ -117,58 +122,55 @@
       border-radius: 4px;
     }
 
+    nav a:hover {
+      background-color: #ffebf5;
+    }
+
     .spacer { height: 40px; }
 
     /* ============================
-       CORRECCIÓN CELULAR REAL
+       RESPONSIVE CELULAR / TABLET
        ============================ */
     @media (max-width: 768px) {
 
-      /* Las secciones ya NO son gigantes */
       section {
         min-height: auto;
-        padding: 1.5rem 1rem;
-        background-size: contain;
-        background-position: top center;
-        background-color: #ffffff;
+        padding: 4rem 1rem 2rem;
       }
 
-      /* ELIMINAMOS el espacio en blanco entre páginas */
-      section::after {
-        display: none;
+      .page-image {
+        max-width: 100%;
+        margin-bottom: 1rem;
       }
 
-      /* Formulario más cómodo */
       .overlay {
-        max-width: 95%;
+        max-width: 100%;
         padding: 1rem;
       }
 
       input[type="text"],
       input[type="email"],
       textarea {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         padding: 0.5rem;
       }
 
       .submit-btn {
         padding: 0.7rem;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
       }
 
-      /* Navegación más chica */
       nav {
         flex-wrap: wrap;
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         gap: 0.2rem;
-        padding: 0.3rem;
+        padding: 0.4rem;
       }
     }
 
-    /* Celulares muy chicos */
     @media (max-width: 480px) {
       section {
-        padding: 1.2rem 0.8rem;
+        padding: 3.5rem 0.8rem 1.5rem;
       }
 
       .overlay {
@@ -176,7 +178,7 @@
       }
 
       input, textarea {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -196,15 +198,35 @@
 
   <div class="spacer"></div>
 
-  <!-- Secciones -->
-  <section id="pagina1"></section>
-  <section id="pagina2"></section>
-  <section id="pagina3"></section>
-  <section id="pagina4"></section>
-  <section id="pagina5"></section>
+  <!-- PÁGINA 1 -->
+  <section id="pagina1">
+    <img src="IMAGEN_sofia_1.png" alt="Página 1 - Sofía" class="page-image" />
+  </section>
 
-  <!-- Formulario -->
+  <!-- PÁGINA 2 -->
+  <section id="pagina2">
+    <img src="IMAGEN_sofia_2.png" alt="Página 2 - Sofía" class="page-image" />
+  </section>
+
+  <!-- PÁGINA 3 -->
+  <section id="pagina3">
+    <img src="IMAGEN_sofia_3.png" alt="Página 3 - Sofía" class="page-image" />
+  </section>
+
+  <!-- PÁGINA 4 -->
+  <section id="pagina4">
+    <img src="IMAGEN_sofia_4.png" alt="Página 4 - Sofía" class="page-image" />
+  </section>
+
+  <!-- PÁGINA 5 -->
+  <section id="pagina5">
+    <img src="IMAGEN_sofia_5.png" alt="Página 5 - Sofía" class="page-image" />
+  </section>
+
+  <!-- PÁGINA 6 - FORMULARIO -->
   <section id="pagina6">
+    <img src="IMAGEN_sofia_6.png" alt="Página 6 - Sofía" class="page-image" />
+
     <div class="overlay">
       <h2>Confirmar asistencia</h2>
       <p>Completá el formulario para enviarnos tu respuesta.</p>
