@@ -14,7 +14,7 @@
       scroll-behavior: smooth;
     }
 
-    /* Cada página ocupa el alto completo */
+    /* Secciones */
     section {
       min-height: 100vh;
       display: flex;
@@ -28,7 +28,7 @@
       background-repeat: no-repeat;
     }
 
-    /* Fondos de cada página */
+    /* Fondos */
     #pagina1 { background-image: url("IMAGEN_sofia_1.png"); }
     #pagina2 { background-image: url("IMAGEN_sofia_2.png"); }
     #pagina3 { background-image: url("IMAGEN_sofia_3.png"); }
@@ -36,7 +36,7 @@
     #pagina5 { background-image: url("IMAGEN_sofia_5.png"); }
     #pagina6 { background-image: url("IMAGEN_sofia_6.png"); }
 
-    /* Capa blanca para el formulario */
+    /* Caja del formulario */
     .overlay {
       background: rgba(255, 255, 255, 0.92);
       padding: 1.5rem;
@@ -93,7 +93,7 @@
       background-color: #ff4c98;
     }
 
-    /* Navegación superior */
+    /* Navegación */
     nav {
       position: fixed;
       top: 0;
@@ -121,6 +121,68 @@
     }
 
     .spacer { height: 40px; }
+
+    /* ⭐⭐⭐ RESPONSIVE PARA CELULAR ⭐⭐⭐ */
+    @media (max-width: 768px) {
+
+      section {
+        padding: 1.5rem 1rem;
+        background-position: top;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        font-size: 0.8rem;
+        padding: 0.4rem;
+      }
+
+      .overlay {
+        padding: 1rem;
+        border-radius: 8px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+      }
+
+      .submit-btn {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* ⭐⭐⭐ CELULARES MUY CHICOS ⭐⭐⭐ */
+    @media (max-width: 480px) {
+
+      nav {
+        font-size: 0.75rem;
+        gap: 0.2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .overlay {
+        padding: 0.8rem;
+      }
+
+      input, textarea {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 
@@ -138,72 +200,35 @@
 
   <div class="spacer"></div>
 
-  <!-- PÁGINA 1 -->
-  <section id="pagina1">
-    <h1></h1>
-    <p></p>
-    <p></p>
-  </section>
+  <!-- Páginas -->
+  <section id="pagina1"></section>
+  <section id="pagina2"></section>
+  <section id="pagina3"></section>
+  <section id="pagina4"></section>
+  <section id="pagina5"></section>
 
-  <!-- PÁGINA 2 -->
-  <section id="pagina2">
-    <h2></h2>
-    <p></p>
-  </section>
-
-  <!-- PÁGINA 3 -->
-  <section id="pagina3">
-    <h2></h2>
-    <p></p>
-  </section>
-
-  <!-- PÁGINA 4 -->
-  <section id="pagina4">
-    <h2></h2>
-    <p></p>
-    <p></p>
-  </section>
-
-  <!-- PÁGINA 5 -->
-  <section id="pagina5">
-    <h2></h2>
-    <p></p>
-  </section>
-
-    <!-- PÁGINA 6 - FORMULARIO -->
+  <!-- PÁGINA 6 - FORMULARIO -->
   <section id="pagina6">
     <div class="overlay">
       <h2>Confirmar asistencia</h2>
       <p>Completá el formulario para enviarnos tu respuesta.</p>
-      
-      <!-- Formulario que envía un correo a Cintia -->
+
       <form action="mailto:cintia_valdez@hotmail.es" method="post" enctype="text/plain">
+
         <label for="nombre">Nombre del invitado</label>
         <input type="text" id="nombre" name="Nombre" required />
 
         <label>¿Asistirá a la fiesta?</label>
         <div class="options">
-          <label>
-            <input type="radio" name="Asistencia" value="Sí, asistiré" required />
-            Sí, asistiré
-          </label>
-          <label>
-            <input type="radio" name="Asistencia" value="No podré asistir" />
-            No podré asistir
-          </label>
+          <label><input type="radio" name="Asistencia" value="Sí, asistiré" required /> Sí, asistiré</label>
+          <label><input type="radio" name="Asistencia" value="No podré asistir" /> No podré asistir</label>
         </div>
 
         <h3>Lista de verificación de alergias</h3>
 
         <div class="options">
-          <label>
-            <input type="checkbox" name="Alergia_Sin_TACC" value="Sin TACC" />
-            Sin TACC
-          </label>
-          <label>
-            <input type="checkbox" name="Alergia_Otras" value="Otras" />
-            Otros (especificar abajo)
-          </label>
+          <label><input type="checkbox" name="Alergia_Sin_TACC" value="Sin TACC" /> Sin TACC</label>
+          <label><input type="checkbox" name="Alergia_Otras" value="Otras" /> Otros (especificar abajo)</label>
         </div>
 
         <label for="comentarios">Comentarios / Detalle de alergias u otra información</label>
@@ -211,8 +236,9 @@
 
         <button type="submit" class="submit-btn">Enviar respuesta</button>
       </form>
-    </section>
 
-  </div>
+    </div>
+  </section>
+
 </body>
 </html>
